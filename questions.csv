@@ -1,0 +1,78 @@
+```csv
+Question,Category
+Tell me about yourself,HR
+Why should we hire you?,HR
+What are your strengths?,HR
+What are your weaknesses?,HR
+Where do you see yourself in 5 years?,HR
+Why do you want to work for our company?,HR
+Describe a challenge you faced and how you handled it.,HR
+How do you handle pressure and deadlines?,HR
+Tell me about a time you worked in a team.,HR
+Why should we choose you over other candidates?,HR
+
+What is Python?,Technical
+What is Machine Learning?,Technical
+Explain OOP concepts.,Technical
+What is Data Science?,Technical
+What is Flask?,Technical
+What is the difference between List and Tuple in Python?,Technical
+What are Python decorators?,Technical
+What is exception handling in Python?,Technical
+What is the difference between GET and POST methods?,Technical
+What is an API?,Technical
+What is REST API?,Technical
+What is SQL?,Technical
+What is the difference between SQL and NoSQL databases?,Technical
+What are primary keys and foreign keys?,Technical
+Explain normalization in DBMS.,Technical
+What is a JOIN in SQL?,Technical
+What is HTML?,Technical
+What is the difference between HTML, CSS, and JavaScript?,Technical
+What is responsive web design?,Technical
+What is Bootstrap?,Technical
+What is Git and why is it used?,Technical
+What is GitHub?,Technical
+What is version control?,Technical
+What is the difference between supervised and unsupervised learning?,Technical
+What is overfitting in Machine Learning?,Technical
+What is a neural network?,Technical
+What is data visualization?,Technical
+What is Tableau?,Technical
+Explain your final year project.,Project
+What technologies did you use in your project?,Project
+What challenges did you face while developing your project?,Project
+How does your project solve a real-world problem?,Project
+What improvements would you make to your project in the future?,Project
+```
+Question,Category
+What is a variable in Python?,Technical
+What are Python functions?,Technical
+What is the difference between local and global variables?,Technical
+What is a dictionary in Python?,Technical
+What is a lambda function?,Technical
+What is inheritance in OOP?,Technical
+What is polymorphism?,Technical
+What is encapsulation?,Technical
+What is abstraction?,Technical
+What is multithreading in Python?,Technical
+What is DBMS?,Technical
+What are the advantages of a database?,Technical
+What is a transaction in DBMS?,Technical
+What is indexing in SQL?,Technical
+What is the difference between DELETE, DROP, and TRUNCATE?,Technical
+What is JavaScript?,Technical
+What is the DOM?,Technical
+What is the difference between frontend and backend development?,Technical
+What is cloud computing?,Technical
+What do you know about Artificial Intelligence?,Technical
+Tell me about your internship experience.,HR
+What motivates you to achieve your goals?,HR
+How do you prioritize your tasks?,HR
+Describe yourself in three words.,HR
+Are you willing to relocate?,HR
+Tell me about a failure and what you learned from it.,HR
+How do you stay updated with new technologies?,HR
+What are your career goals?,HR
+Why did you choose this field?,HR
+Do you have any questions for us?,HR
