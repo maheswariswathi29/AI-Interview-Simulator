@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Interview Final Report</title>
+
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+
+<style>
+
+
+body{
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #2563eb
+    );
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    font-family:Arial, sans-serif;
+
+}
+
+
+
+.report-container{
+
+
+    width:90%;
+
+    max-width:950px;
+
+    background:white;
+
+    color:black;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.35);
+
+}
+
+
+
+.title{
+
+    text-align:center;
+
+}
+
+
+
+.title h1{
+
+    color:#2563eb;
+
+    font-size:35px;
+
+}
+
+
+
+.title p{
+
+    color:#555;
+
+    font-size:18px;
+
+}
+
+
+
+
+.profile{
+
+
+    background:#eff6ff;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-size:20px;
+
+}
+
+
+
+
+.score-box{
+
+
+    margin-top:25px;
+
+    background:#f1f5f9;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+
+}
+
+
+
+
+.score{
+
+
+    font-size:65px;
+
+    font-weight:bold;
+
+    color:#22c55e;
+
+
+}
+
+
+
+
+table{
+
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:25px;
+
+
+}
+
+
+
+th,td{
+
+
+    border:1px solid #ddd;
+
+    padding:15px;
+
+    font-size:16px;
+
+
+}
+
+
+
+th{
+
+
+    background:#2563eb;
+
+    color:white;
+
+
+}
+
+
+
+.feedback{
+
+
+    margin-top:25px;
+
+    background:#f8fafc;
+
+    padding:25px;
+
+    border-radius:20px;
+
+
+}
+
+
+
+.feedback h2{
+
+    color:#2563eb;
+
+}
+
+
+
+.feedback li{
+
+    margin:8px;
+
+    font-size:16px;
+
+}
+
+
+
+
+
+.status{
+
+
+    text-align:center;
+
+    margin-top:25px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+
+}
+
+
+
+.selected{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+
+
+.improve{
+
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+
+}
+
+
+
+
+
+.buttons{
+
+
+    text-align:center;
+
+    margin-top:35px;
+
+
+}
+
+
+
+.btn{
+
+
+    display:inline-block;
+
+    padding:13px 30px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    margin:10px;
+
+    font-size:16px;
+
+
+}
+
+
+
+.btn:hover{
+
+
+    background:#1d4ed8;
+
+
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="report-container">
+
+
+
+<div class="title">
+
+
+<h1>
+🎓 AI Interview Final Report
+</h1>
+
+
+<p>
+AI Based Performance Evaluation
+</p>
+
+
+</div>
+
+
+
+
+<div class="profile">
+
+
+👤 Candidate :
+<b>
+{{ candidate_name }}
+</b>
+
+
+</div>
+
+
+
+
+
+<div class="score-box">
+
+
+<h2>
+Final Interview Score
+</h2>
+
+
+<div class="score">
+
+{{ final_score }}%
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<table>
+
+
+<tr>
+
+<th>
+Total Questions
+</th>
+
+<td>
+{{ total_questions }}
+</td>
+
+
+</tr>
+
+
+
+
+<tr>
+
+<th>
+Confidence Score
+</th>
+
+<td>
+{{ avg_confidence }}%
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+<th>
+Communication Score
+</th>
+
+
+<td>
+{{ avg_communication }}%
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+<th>
+Overall Performance
+</th>
+
+
+<td>
+{{ performance }}
+</td>
+
+
+</tr>
+
+
+
+
+
+<tr>
+
+<th>
+Interview Status
+</th>
+
+
+<td>
+{{ status }}
+</td>
+
+
+</tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<div class="feedback">
+
+
+<h2>
+🤖 AI Feedback
+</h2>
+
+
+<p>
+
+{{ overall_feedback }}
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="feedback">
+
+
+<h2>
+🌟 Strengths
+</h2>
+
+
+
+<ul>
+
+
+{% for item in strengths %}
+
+
+<li>
+{{ item }}
+</li>
+
+
+{% endfor %}
+
+
+</ul>
+
+
+
+
+
+<h2>
+📈 Areas To Improve
+</h2>
+
+
+
+<ul>
+
+
+{% for item in improvements %}
+
+
+<li>
+{{ item }}
+</li>
+
+
+{% endfor %}
+
+
+</ul>
+
+
+
+</div>
+
+
+
+
+
+
+
+{% if "Selected" in status %}
+
+
+
+<div class="status selected">
+
+
+✅ Congratulations!
+
+<br>
+
+You are Interview Ready 🎉
+
+
+</div>
+
+
+
+{% else %}
+
+
+
+<div class="status improve">
+
+
+📚 Keep Practicing
+
+<br>
+
+Improve Your Skills
+
+
+</div>
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+<div class="buttons">
+
+
+<a href="/" class="btn">
+
+🏠 Home
+
+</a>
+
+
+
+
+<a href="/results" class="btn">
+
+📊 Results Dashboard
+
+</a>
+
+
+
+<a href="/download_report" class="btn">
+
+📄 Download PDF
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>
